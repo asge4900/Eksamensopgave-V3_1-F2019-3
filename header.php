@@ -108,7 +108,7 @@
     <?php  if (isset($_SESSION['username'])) { ?>
         <div class="createArticle container">
             <h3 class="center errorMsg">Opret ny vare:</h3>
-            <form action="includes/insertArticle.php" method="post">
+            <form action="assets/addProduct.php" method="post">
                 <div>
                     <label for="imgSrc">Billede</label>
                     <input type="text" id="imgSrc" name="imgSrc" placeholder="Vælg billede" required>

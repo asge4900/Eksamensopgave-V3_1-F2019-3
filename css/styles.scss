@@ -455,6 +455,30 @@ h6 {
     font-weight: bold;
 }
 
+
+
+
+// register.php
+
+main{
+
+    #register{
+        margin-left: 2%;
+
+        .form-group{
+
+            label{
+                width: 10%;
+            }
+            input{
+                width: 88%;
+            }
+        }
+    }
+}
+
+
+
 // Mediaqueries
 @media screen and (max-width: 1700px) {
     .container {

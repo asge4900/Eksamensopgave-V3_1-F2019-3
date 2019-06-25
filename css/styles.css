@@ -502,6 +502,18 @@ h6 {
   font-weight: bold;
 }
 
+main #register {
+  margin-left: 2%;
+}
+
+main #register .form-group label {
+  width: 10%;
+}
+
+main #register .form-group input {
+  width: 88%;
+}
+
 @media screen and (max-width: 1700px) {
   .container {
     width: 90%;
