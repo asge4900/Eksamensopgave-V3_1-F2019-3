@@ -60,7 +60,7 @@
     <div class="container navbar">
         <nav>
             <ul>
-                <li class="active"><a href="index.php">Forside</a></li>
+                <li class=" active"><a href="index.php">Forside</a></li>
                 <li><a href="#">Produkter</a></li>
                 <li><a href="#">Nyheder</a></li>
                 <li><a href="#">Handelsbetingelser</a></li>

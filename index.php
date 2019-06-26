@@ -7,12 +7,12 @@
                 </div>
                 <div class="catMain">
                     <ul>
-                        <li><a href="assets/filterProduct.php?id=Jakker">Jakker</a></li>
-                        <li><a href="assets/filterProduct.php?id=Bukser">Bukser</a></li>
-                        <li><a href="assets/filterProduct.php?id=Skjorter">Skjorter</a></li>
-                        <li><a href="assets/filterProduct.php?id=Strik">Strik</a></li>
-                        <li><a href="assets/filterProduct.php?id=T-shirts & Tank tops">T-shirts & Tank tops</a></li>
-                        <li><a href="assets/filterProduct.php?id=Tasker">Tasker</a></li>
+                        <li><a href="filterProduct.php?id=Jakker">Jakker</a></li>
+                        <li><a href="filterProduct.php?id=Bukser">Bukser</a></li>
+                        <li><a href="filterProduct.php?id=Skjorter">Skjorter</a></li>
+                        <li><a href="filterProduct.php?id=Strik">Strik</a></li>
+                        <li><a href="filterProduct.php?id=T-shirts & Tank tops">T-shirts & Tank tops</a></li>
+                        <li><a href="filterProduct.php?id=Tasker">Tasker</a></li>
                     </ul>
                 </div>
             </div>

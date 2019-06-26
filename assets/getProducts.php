@@ -6,7 +6,7 @@
     $statement->execute();
 
     while ($row = $statement->fetch()) {
-        $date = new DateTime($row['published']);
+        setlocale(LC_ALL, 'da_DK');
         ?>
             <article>
                     <img src="<?php echo $row['imgSrc']; ?>" alt="<?php echo $row['imgAlt']; ?>">
@@ -28,8 +28,7 @@
                     </div>
                     <div class="description">
                         <div class="published">
-                        <!-- Dag d. d/m-yyyy -->
-                            Oprettet: <?php echo $date->format('d-m-Y'). " af " .$row['dbUsername']; ?>
+                            Oprettet: <?php echo strftime("%A d. %d/%m/%Y", strtotime($row['published'])). " af " .$row['dbUsername']; ?>
                         </div>
                         <p><?php echo $row['content']; ?>
                             <a href="#">Læs mere...</a></p>

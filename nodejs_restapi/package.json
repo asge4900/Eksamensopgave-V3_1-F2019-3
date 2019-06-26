@@ -1,0 +1,25 @@
+{
+  "name": "nodejs_restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asge4900/Eksamensopgave-V3_1-F2019-3.git"
+  },
+  "author": "Asger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asge4900/Eksamensopgave-V3_1-F2019-3/issues"
+  },
+  "homepage": "https://github.com/asge4900/Eksamensopgave-V3_1-F2019-3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1"
+  }
+}
