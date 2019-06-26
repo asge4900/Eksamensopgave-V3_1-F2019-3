@@ -1,19 +1,7 @@
 <?php
-    $title = "Produkter";
-    require_once "assets/connect.php";
-    require "header.php";
-
-    $id = $_GET['id'];
-
-    // echo $id;
-
-
-    $statement = $dbh->prepare("SELECT * FROM products JOIN users ON users.userId = products.userId WHERE category = ?");
-    $statement->bindParam(1, $id);
-    $statement->execute();
-
-    ?>
-     <main class="container">
+$title = "Produkter";
+require "header.php" ?>
+    <main class="container">
         <aside>
             <div class="categories">
                 <div class="catTop">
@@ -62,42 +50,8 @@
                 </div>
             </div>
             <div class="frontProducts">
-            <?php
-    while ($row = $statement->fetch()) {
-        setlocale(LC_ALL, 'da_DK');
-        ?>
-            <article>
-                    <img src="<?php echo $row['imgSrc']; ?>" alt="<?php echo $row['imgAlt']; ?>">
-                    <div class="info">
-                        <h3><?php echo $row['title']; ?></h3>
-                        <div class="stars">
-                           <?php
-                           $stars = $row['stars'];
-
-                           for ($i=1; $i <= $stars; $i++) {
-                               echo "<i class='fa fa-star' aria-hidden='true'></i>";
-                           }
-
-                           for ($i=1; $i <= 5-$stars; $i++) {
-                               echo "<i class='fa fa-star-o' aria-hidden='true'></i>";
-                           }
-                           ?>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <div class="published">
-                            Oprettet: <?php echo strftime("%A d. %d/%m/%Y", strtotime($row['published'])). " af " .$row['dbUsername']; ?>
-                        </div>
-                        <p><?php echo $row['content']; ?>
-                            <a href="#">Læs mere...</a></p>
-                        <!-- Mulighed for sletning herunder -->
-                    </div>
-            </article>
-        <?php
-    }
-    ?>
-    </div>
+                <?php include "assets/getProducts.php" ?>
+            </div>
         </div>
     </main>
-    <?php
-    require "footer.php";
+    <?php require "footer.php" ?>

@@ -1,4 +1,5 @@
 <?php
+$activePage = basename($_SERVER['PHP_SELF'], ".php");
   if(!isset($_SESSION))
   {
       session_start();
@@ -10,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Forside | FancyClothes.dk</title>
+    <title><?php echo $title; ?> | FancyClothes.dk</title>
     <meta name="description" content="Velkommen til FancyClothes.dk">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -60,17 +61,18 @@
     <div class="container navbar">
         <nav>
             <ul>
-                <li class=" active"><a href="index.php">Forside</a></li>
-                <li><a href="#">Produkter</a></li>
-                <li><a href="#">Nyheder</a></li>
-                <li><a href="#">Handelsbetingelser</a></li>
-                <li><a href="#">Om os</a></li>
+                <li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php">Forside</a></li>
+                <li class="<?= ($activePage == 'products') || ($activePage == 'filterProduct')? 'active':''; ?>"><a href="products.php">Produkter</a></li>
+                <li class="<?= ($activePage == 'news') ? 'active':''; ?>"><a href="#">Nyheder</a></li>
+                <li class="<?= ($activePage == 'conditions') ? 'active':''; ?>"><a href="#">Handelsbetingelser</a></li>
+                <li class="<?= ($activePage == 'about') ? 'active':''; ?>"><a href="#">Om os</a></li>
+                <li class="<?= ($activePage == 'contact') ? 'active':''; ?>"><a href="contact.php">Kontakt</a></li>
                 <?php  if (isset($_SESSION['username'])) { ?>
                     <li><a href='assets/logout.php' class='loginBtn'>Log ud</a></li>
                 <?php }
                 else { ?>
                     <li><a href='#' class='loginBtn'>Log ind</a></li>
-                    <li><a href='register.php' class='loginBtn'>Opret bruger</a></li>
+                    <li class="<?= ($activePage == 'register') ? 'active':''; ?>"><a href='register.php' class='loginBtn'>Opret bruger</a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -108,7 +110,7 @@
     <?php  if (isset($_SESSION['username'])) { ?>
         <div class="createArticle container">
             <h3 class="center errorMsg">Opret ny vare:</h3>
-            <form action="assets/addProduct.php" method="post">
+            <form action="assets/addProduct.php" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="imgSrc">Billede</label>
                     <input type="text" id="imgSrc" name="imgSrc" placeholder="Vælg billede" required>
